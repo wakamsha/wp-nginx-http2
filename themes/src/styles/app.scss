@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*!
+Theme Name: _s
+Theme URI: https://eigosapuri.jp/
+Author: wakamsha
+Author URI: https://eigosapuri.jp/
+Version: 1.0.0
+*/
+
+@import "variables";
+
+.entry {
+    background: $theme-primary;
+    color: green;
+}
