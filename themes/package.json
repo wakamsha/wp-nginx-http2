@@ -10,6 +10,7 @@
     "babel-preset-env": "^1.6.0",
     "cross-env": "^5.0.5",
     "node-sass": "^4.5.3",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.6"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "style:build": "node-sass src/styles -o _s/ --include-path ./node_modules/bootstrap-sass/assets/stylesheets/ --output-style compressed",
     "script:watch": "cross-env NODE_ENV=dev  webpack --config ./webpack.config.js -d --watch --progress --colors",
     "script:build": "cross-env NODE_ENV=prod webpack --config ./webpack.config.js",
-    "start": "yarn run reset && yarn run copy && yarn run style:build && concurrently \"yarn run style:watch\" \"yarn run script:watch\""
+    "start": "yarn run reset && yarn run copy && yarn run style:build && concurrently \"yarn run style:watch\" \"yarn run script:watch\"",
+    "build": "yarn run reset && yarn run copy && yarn run style:build && yarn run script:build"
   }
 }
