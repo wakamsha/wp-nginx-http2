@@ -69,7 +69,17 @@ $ docker-compose down
 ```
 $ docker-compose build
 ```
-例えば WordPress プラグインを追加・削除したい時は、`app/Dockerfile` を編集した後にイメージを再ビルドします。再ビルド後に起動コマンドを実行すると更新されたイメージから Docker コンテナが生成されます。
+例えば WordPress プラグインを追加・削除したい時は、後述する `app/bin/wp-plugin.sh` に追記・削除して、これをイメージに適用させます。適用するにはイメージを再ビルドします。
+
+### WordPress プラグインの追加と削除
+WordPress プラグインは、Docker イメージをビルドする時にインストールされます。インストールしたいプラグインは `app/bin/wp-plugins.sh` で管理されています。
+```shellscript
+# WP プラグイン一覧
+# インストールしたいプラグインをここに記述する
+plugins=("wp-emmet" "footnotes" "jetpack-markdown")
+⋮
+```
+`plugins` という配列にインストールしたいプラグイン名を追記します。ここに書かれているプラグインがビルド時にインストールされます。
 
 
 ## Anything Else
