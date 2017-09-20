@@ -24,5 +24,5 @@ module.exports = {
             exclude: /node_modules/
         }]
     },
-    plugins: ...(dev ? [] : [new webpack.optimize.ModuleConcatenationPlugin(), new UglifyJSPlugin()])
+    plugins: dev ? [] : [new webpack.optimize.ModuleConcatenationPlugin(), new UglifyJSPlugin()]
 };
